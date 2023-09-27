@@ -1,0 +1,60 @@
+body {
+    background-color: rgb(42, 41, 41);
+    color: lightgrey;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10%;
+}
+
+.header {
+    font-size: 48px;
+    margin-bottom: 50px;
+}
+
+.scores-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+}
+
+.scores-name,
+.scores-point {
+    display: flex;
+}
+
+.scores-name div {
+    flex: 1;
+}
+
+.scores-point div {
+    flex: 1;
+    font-size: 72px;
+}
+
+.power,
+.round {
+    font-size: 24px;
+    margin-top: 50px;
+}
+
+.power-container {
+    display: flex;
+    gap: 50px;
+    margin-top: 12px;
+    justify-content: center;
+}
+
+.rock,.paper,.scissors {
+    font-size: 72px;
+    padding: 5px;
+    border: 2px solid lightblue;
+    border-radius: 16px;
+}
+
+.result {
+    font-size: 24px;
+    margin-top: 12px;
+}
+
+* {border: 1px solid red;}

@@ -1,9 +1,21 @@
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
+const roundResult = document.querySelector('.result');
+const playerScores = document.querySelector('.your-scores');
+const computerScores = document.querySelector('.computer-scores');
+const round = document.querySelector('.round');
+let roundNumber = 0;
 
+rock.addEventListener ('click', () => {playRound('rock')});
+paper.addEventListener ('click', () => {playRound('paper')});
+scissors.addEventListener ('click', () => {playRound('scissors')});
 
 function playRound (playerSelection, computerSelection) {
     computerSelection = getComputerChoice();
     playerSelection = playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1);
 
+    let player = parseInt(playerScores.textContent);
     let result;
     if (playerSelection == 'Rock' && computerSelection == 'Scissors'
         || playerSelection == 'Paper' && computerSelection == 'Rock'
@@ -16,7 +28,12 @@ function playRound (playerSelection, computerSelection) {
     } else {
         result = 'Draw!';
     }
-    return result;
+
+    if (result.includes('Win!')) playerScores.textContent=parseInt(playerScores.textContent) + 1;
+    if (result.includes('Lose!')) computerScores.textContent=parseInt(computerScores.textContent) + 1;
+    roundNumber += 1;
+    round.textContent = `Round ${roundNumber}`;
+    return roundResult.textContent = result;
 }
 
 function getComputerChoice () {
